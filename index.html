@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Online Shop</title>
+    <style>
+        /* CSS Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .menu {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+        }
+
+        .menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu ul li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .menu ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 5px 10px;
+        }
+
+        .slider-container {
+            width: 100%;
+            height: 400px;
+            background-color: #ccc;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slider-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .slider-image.active {
+            opacity: 1;
+        }
+
+        .headline {
+            font-size: 30px;
+            color: #333;
+        }
+
+        .subheadline {
+            font-size: 18px;
+            color: #777;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #FFC107;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #FFA000;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header class="header">
+        <div class="menu">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="slider-container">
+            <img src="slider1.jpg" alt="Slider Image 1" class="slider-image active">
+            <img src="slider2.jpg" alt="Slider Image 2" class="slider-image">
+            <img src="slider3.jpg" alt="Slider Image 3" class="slider-image">
+        </div>
+        <h1 class="headline">Welcome to Your Online Shop</h1>
+        <p class="subheadline">Discover amazing products at great prices.</p>
+        <a href="#" class="cta-button">Shop Now</a>
+    </header>
+
+    <footer class="footer">
+        &copy; 2023 Your Online Shop. All rights reserved.
+    </footer>
+</div>
+<script>
+  // JavaScript code to create a simple image slider
+  const sliderImages = document.querySelectorAll('.slider-image');
+  let currentSlide = 0;
+
+  function showSlide(n) {
+    for (let i = 0; i < sliderImages.length; i++) {
+      sliderImages[i].classList.remove('active');
+    }
+    sliderImages[n].classList.add('active');
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % sliderImages.length;
+    showSlide(currentSlide);
+  }
+
+  setInterval(nextSlide, 3000); // Change slide every 3 seconds
+</script>
+</body>
+</html>
